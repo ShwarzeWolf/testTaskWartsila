@@ -24,12 +24,21 @@
     <ClInclude Include="complexNumber.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="userInfo.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="userInfoExceptions.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="testTaskC++.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="userInfo.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

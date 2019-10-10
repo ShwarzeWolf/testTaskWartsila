@@ -1,24 +1,36 @@
+#include "stdafx.h"
 #include "userInfo.h"
+#include "userInfoExceptions.h"
 #include <string>
 #include <iostream>
 
 using namespace std;
 
 void userInfo::addUser (const string &login, const string &password) {
-	if (users[login] != 0) {
-		cout << "Login is taken, choose another one" << endl;
-		return;
-	};
+	try {
+		if (users[login] != 0)
+			throw ExisingLoginException ();
 
-	users[login] = hashFunction (password);
+		users[login] = hashFunction (password);
+	}
+	catch (exception &e) {
+		cout << e.what () << endl;
+	}
 };
 
 void userInfo::checkPassword (const string &login, const string &password) {
-	if (users[login] == 0) {
-		cout << "No such user found" << endl;
-		return;
+	try {
+		if (users[login] == 0)
+			throw NoSuchUserException ();
+
+		if (!passwordIsCorrect (login, password))
+			throw WrongPasswordException ();
+
+		cout << "Password is correct" << endl;
 	}
-		cout << (passwordIsCorrect (login, password) ? "password is correct" : "password is incorrect") << endl;
+	catch(exception &e) {
+		cout << e.what () << endl;
+	};
 };
 
 bool userInfo::passwordIsCorrect (const string &login, const string &password) {
