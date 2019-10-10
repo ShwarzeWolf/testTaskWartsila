@@ -40,9 +40,8 @@ bool userInfo::passwordIsCorrect (const string &login, const string &password) {
 int userInfo::hashFunction (const string &password) {
 	int sum = 0;
 
-	for (auto i = password.begin (); i != password.end (); ++i) {
+	for (auto i = password.begin (); i != password.end (); ++i)
 		sum += *i * HASH_NUMBER;
-	}
 
 	return sum;
 }
