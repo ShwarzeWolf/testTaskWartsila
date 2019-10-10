@@ -162,6 +162,7 @@
     </ClCompile>
     <ClCompile Include="testTaskC++.cpp" />
     <ClCompile Include="userInfo.cpp" />
+    <ClCompile Include="userInfoExceptions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.md" />

@@ -2,19 +2,13 @@
 #include <exception>
 
 class NoSuchUserException : public std::exception {
-	const char * what () const throw () {
-		return "No such user in a base";
-	}
+	const char * what () const throw ();
 };
 
 class WrongPasswordException : public std::exception {
-	const char * what () const throw () {
-		return "Password is incorrect";
-	}
+	const char * what () const throw ();
 };
 
 class ExisingLoginException : public std::exception {
-	const char * what () const throw () {
-		return "Login is taken, choose another one";
-	}
+	const char * what () const throw ();
 };
